@@ -11,14 +11,14 @@ function Navbar() {
       title: 'Home',
       path: '/',
     },
-    {
-      title: 'About',
-      path: '/about',
-    },
-    {
-      title: 'Dashboard',
-      path: '/dashboard',
-    },
+    // {
+    //   title: 'About',
+    //   path: '/about',
+    // },
+    // {
+    //   title: 'Dashboard',
+    //   path: '/dashboard',
+    // },
   ];
 
   return (
@@ -51,30 +51,28 @@ function Navbar() {
         </div>
         <div className="top-bar-right">
           <ul className="dropdown menu" data-dropdown-menu>
-            <Router>
-              <div className="columns">
-                <ul className="menu">
-                  {navItems.map((item) => {
-                    return (
-                      <button
-                        onClick={() => setPath(item.path)}
+            <div className="columns">
+              <ul className="menu">
+                {navItems.map((item) => {
+                  return (
+                    <button
+                      onClick={() => setPath(item.path)}
+                    >
+                      <Link
+                        className={`clear button${
+                          path === item.path
+                            ? ''
+                            : ' secondary'
+                        }`}
+                        to={item.path}
                       >
-                        <Link
-                          className={`clear button${
-                            path === item.path
-                              ? ''
-                              : ' secondary'
-                          }`}
-                          to={item.path}
-                        >
-                          {item.title}
-                        </Link>
-                      </button>
-                    );
-                  })}
-                </ul>
-              </div>
-            </Router>
+                        {item.title}
+                      </Link>
+                    </button>
+                  );
+                })}
+              </ul>
+            </div>
           </ul>
         </div>
       </div>
