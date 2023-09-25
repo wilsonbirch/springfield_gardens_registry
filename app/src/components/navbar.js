@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Link,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [path, setPath] = useState('/');
@@ -53,9 +50,10 @@ function Navbar() {
           <ul className="dropdown menu" data-dropdown-menu>
             <div className="columns">
               <ul className="menu">
-                {navItems.map((item) => {
+                {navItems.map((item, i) => {
                   return (
                     <button
+                      key={i}
                       onClick={() => setPath(item.path)}
                     >
                       <Link
