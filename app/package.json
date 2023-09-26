@@ -2,7 +2,7 @@
   "name": "springfield_gardens_registry",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wilsonbirch.github.io/springfield_gardens_registry/app",
+  "homepage": "https://wilsonbirch.github.io/springfield_gardens_registry/build",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

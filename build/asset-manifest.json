@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/springfield_gardens_registry/build/static/js/main.18da8ca5.js",
+    "index.html": "/springfield_gardens_registry/build/index.html",
+    "main.18da8ca5.js.map": "/springfield_gardens_registry/build/static/js/main.18da8ca5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.18da8ca5.js"
+  ]
+}
