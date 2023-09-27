@@ -4,6 +4,8 @@ import community_gardens from './community_gardens.json';
 
 function Home() {
   const [search, setSearch] = useState('');
+  const [sliderValue, setSliderValue] = useState(50);
+
   const [gardens, setGardens] = useState(community_gardens);
 
   setMarkers();
@@ -20,11 +22,27 @@ function Home() {
 
   return (
     <div className="home-container">
-      <div style={{ width: '20vw' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div style={{ width: '20vw' }}>
+          <input
+            type="text"
+            placeholder="Search for Garden name here"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
         <input
-          type="text"
-          placeholder="Search for Garden name here"
-          onChange={(e) => setSearch(e.target.value)}
+          type="range"
+          min="10"
+          max="100"
+          step="10"
+          defaultValue={sliderValue}
+          onChange={(e) => setSliderValue(e.target.value)}
         />
       </div>
       <gmp-map
@@ -41,6 +59,7 @@ function Home() {
               title={garden.GARDEN}
               data-name={garden.LEGAL_ADDR}
               data-link={garden.LINK}
+              data-GlobalID={garden.GlobalID}
             ></gmp-advanced-marker>
           );
         })}
