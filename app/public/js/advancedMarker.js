@@ -10,11 +10,6 @@ for (const advancedMarker of advancedMarkers) {
       advancedMarker.addEventListener(
         'gmp-click',
         async () => {
-          console.log(advancedMarker);
-          localStorage.setItem(
-            'selectedGarden',
-            advancedMarker.dataset.globalid,
-          );
           const contentString =
             '<div id="content">' +
             '<div id="siteNotice">' +
